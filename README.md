@@ -13,6 +13,7 @@ Crypto is a crpyto currency market and news digest app. This allows a user to vi
 
 ## Experimental Dependencies
 * Charts.js [Documentation](https://www.npmjs.com/package/charts)
+* Passport.js [Documentation](www.passportjs.org)
 
 ## RESTful APIs
 * CoinMarketCap [Documentation](https://coinmarketcap.com/)
