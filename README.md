@@ -12,7 +12,7 @@ Crypto is a crpyto currency market and news digest app. This allows a user to vi
 * Sequelize v4.38.0 [Documentation]()
 
 ## Experimental Dependencies
-* Charts.js
+* Charts.js [Documentation](https://www.npmjs.com/package/charts)
 
 ## RESTful APIs
 * CoinMarketCap [Documentation](https://coinmarketcap.com/)
