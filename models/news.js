@@ -1,7 +1,7 @@
 //dependencies
 
 const NewsAPI = require("newsapi");
-const key = require("./key.js");
+const key = config.newsKey
 const newsapi = new NewsAPI(key);
 //placeholder for search
 var search = "";
