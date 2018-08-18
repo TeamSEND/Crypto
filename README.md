@@ -6,7 +6,9 @@ Crypto is a crpyto currency market and news digest app. This allows a user to vi
 
 ### Development
 
-`npm run dev:server`
+* Create a database using the `schema.sql` file in a MySql server.
+* Add database information to `config/config.json` file for development
+* Use `npm run dev:server` to run the server
 
 ### Production
 
@@ -20,16 +22,12 @@ Crypto is a crpyto currency market and news digest app. This allows a user to vi
 * Express-handlebars v3.0.0 [Documentation](https://www.npmjs.com/package/express-handlebars)
 * Mysql2 v1.5.3 [Documentation](https://www.npmjs.com/package/mysql2)
 * Sequelize v4.38.0 [Documentation](https://www.npmjs.com/package/sequelize)
-
-### Experimental Dependencies
-* Charts.js [Documentation](https://www.npmjs.com/package/charts)
-* uuid [Documentation](https://www.npmjs.com/package/uuid)
-* express-session [Documentation](https://www.npmjs.com/package/express-session)
-* session-file-store [Documentation](https://www.npmjs.com/package/session-file-store)
-* passport [Documentation](https://www.npmjs.com/package/passport)
-* passport-local [Documentation](https://www.npmjs.com/package/passport-local)
-* bCrypt [Documentation](https://www.npmjs.com/package/bcrypt)
-
+* express-session v1.15.6 [Documentation](https://www.npmjs.com/package/express-session)
+* session-file-store v1.2.0 [Documentation](https://www.npmjs.com/package/session-file-store)
+* passport v0.4.0 [Documentation](https://www.npmjs.com/package/passport)
+* passport-local v1.0.0 [Documentation](https://www.npmjs.com/package/passport-local)
+* bCrypt v3.0.0[Documentation](https://www.npmjs.com/package/bcrypt)
+* uuid v3.3.2 [Documentation](https://www.npmjs.com/package/uuid)
 
 ### RESTful APIs
 * CoinMarketCap [Documentation](https://coinmarketcap.com/)
