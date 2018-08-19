@@ -12,6 +12,8 @@ Crypto is a crpyto currency market and news digest app. This allows a user to vi
 
 ### Production
 
+To-do
+
 ## Technologies Used
 
 ### Module Dependencies
