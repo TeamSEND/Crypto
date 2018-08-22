@@ -1,8 +1,8 @@
 //dependencies
-const keys = require("../config.js")
-const Secretkey = keys.CMC;
-console.log(Secretkey)
-
+const secretKey = require("../config/key.js");
+const keyz = secretKey.CMC;
+// const key = "3c4f7072-2810-498f-8b55-619f95408199";
+console.log(keyz)
 
 const axios = require('axios');
 var coinData = ""
@@ -45,7 +45,7 @@ var CMCquery = function (APIkey) {
 //   console.log("this is information")
 // };
 
-var test = new CMCquery(Secretkey);
+var test = new CMCquery(keyz);
 
 test.bestCryptos();
 
