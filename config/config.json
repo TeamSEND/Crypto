@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "root",
-    "database": "exampledb",
+    "database": "crypto_db",
     "host": "localhost",
     "dialect": "mysql",
     "dialectOptions": {
@@ -11,7 +11,7 @@
   },
   "test": {
     "username": "root",
-    "password": null,
+    "password": "root",
     "database": "testdb",
     "host": "localhost",
     "dialect": "mysql",
