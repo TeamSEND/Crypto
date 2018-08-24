@@ -1,11 +1,11 @@
 //dependencies
 
 const NewsAPI = require("newsapi");
-//placeholder for the api key. will be removed later
-const key = "f5090fe009de4358b098c43bb4137e89"
+const secretKey = require("../config/key.js");
+const key = secretKey.NEWS;
 const newsapi = new NewsAPI(key);
 //placeholder for search
-var search = "";
+var search = "Bitcoin";
 
 //generic search for trending articles. Only using crypto-coins-news
 newsapi.v2.topHeadlines({
@@ -22,6 +22,6 @@ newsapi.v2.topHeadlines({
 
 //--------------------------------------
 
-module.exports = function(sequelize, data){
+// module.exports = function(sequelize, data){
     
-}
+// }

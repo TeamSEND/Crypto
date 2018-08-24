@@ -1,4 +1,6 @@
 var db = require("../models");
+var cmc = require("../modules/coinmarketcap.js")
+var news = require("../modules/news.js")
 
 module.exports = function(app) {
   // Load index page
@@ -15,6 +17,12 @@ module.exports = function(app) {
   //   });
   // });
 
+  app.get("/topten", function (req, res){
+    cmc.test.bestCryptos();
+    res.render("", {
+
+    });
+  });
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
     res.render("404", { user: req.user });

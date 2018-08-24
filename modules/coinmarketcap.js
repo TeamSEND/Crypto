@@ -1,8 +1,6 @@
 //dependencies
-var secretKey = require("../config/key.js");
-var keyz = secretKey.CMC;
-// const key = "3c4f7072-2810-498f-8b55-619f95408199";
-console.log(keyz);
+const secretKey = require("../config/key.js");
+const CMCkey = secretKey.CMC;
 
 var axios = require("axios");
 var coinData = "";
@@ -15,13 +13,11 @@ var CMCquery = function(APIkey) {
     headers: {
       "X-CMC_PRO_API_KEY": this.key
     }
-  };
-
-  // Using axios to get the api call
-  this.axiosRequest = function(request) {
-    axios
-      .get(request, this.config)
-      .then(function(response) {
+  }
+  //using axios to get the api call
+  this.axiosRequest = function (request) {
+    axios.get(request, this.config)
+      .then(function (response) {
         //parses the response as a JSON object
         var coinJSON = Object.values(JSON.parse(JSON.stringify(response.data)));
         //sets the coinData variable with the parsed object
@@ -39,16 +35,18 @@ var CMCquery = function(APIkey) {
     var topTen = this.url + "/listings/latest?start=1&limit=10";
     this.axiosRequest(topTen);
   };
+  //searches the user's query of a cryptocurrency symbol
+  this.symbolSearch = function (query) {
+    var symbol = query;
+    var cryptoSym = this.url + "/info?symbol=" + symbol;
+    this.axiosRequest(cryptoSym);
+  }
 };
 
-//----- placeholder for cryptocurrency symbol search
-// this.info = function () {
-//   console.log("this is information")
-// };
+var test = new CMCquery(CMCkey);
 
-var test = new CMCquery(keyz);
-test.bestCryptos();
-
+// test.bestCryptos();
+test.symbolSearch("AAC");
 // module.exports = function(sequelize, data){
 
 // }
