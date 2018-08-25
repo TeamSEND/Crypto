@@ -5,7 +5,7 @@ const CMCkey = secretKey.CMC;
 var axios = require("axios");
 var coinData = "";
 
-var CMCquery = function(APIkey) {
+module.exports = function(APIkey) {
   //searches for the crypto currency type and ID
   this.key = APIkey;
   this.url = "https://pro-api.coinmarketcap.com/v1/cryptocurrency";
@@ -43,10 +43,6 @@ var CMCquery = function(APIkey) {
   }
 };
 
-var test = new CMCquery(CMCkey);
-
-// test.bestCryptos();
-test.symbolSearch("AAC");
 // module.exports = function(sequelize, data){
 
 // }
