@@ -2,13 +2,58 @@
 
 // Object for user login, registration and log out
 var Session = (function() {
+  var request = {
+    signin: function(data) {
+      return $.ajax({
+        headers: {
+          "Content-Type": "application/json"
+        },
+        type: "POST",
+        url: "user/signin",
+        data: JSON.stringify(data)
+      });
+    },
+    signout: function() {
+      return $.ajax({
+        url: "user/signout",
+        type: "GET"
+      });
+    },
+    signup: function(data) {
+      return $.ajax({
+        headers: {
+          "Content-Type": "application/json"
+        },
+        url: "user/signup",
+        type: "POST",
+        data: JSON.stringify(data)
+      });
+    }
+  };
 
   function handleUserSignup(event) {
-    console.log("User Signup Object");
+    var data = {
+      displayName: document.getElementById("form-displayname").value,
+      email: document.getElementById("form-email").value,
+      firstName: document.getElementById("form-firstname").value,
+      lastName: document.getElementById("form-lastname").value,
+      password: document.getElementById("form-password").value
+    };
+
+    request.signup(data);
   }
 
   function handleUserSignin(event) {
-    console.log("User Signin Object");
+    var data = {
+      email: document.getElementById("signin-email").value,
+      password: document.getElementById("signin-password").value
+    };
+
+    request.signin(data);
+  }
+
+  function handleUserSignout(event) {
+    request.signout();
   }
 
   function handleUserSettings(event) {
@@ -17,42 +62,39 @@ var Session = (function() {
 
   return {
     init: function() {
-      firebase.auth().onAuthStateChanged(authStateChangeListener);
+      // LOGIN DIALOG
+      var signinDialog = document.querySelector("#signin-dialog");
+      dialogPolyfill.registerDialog(signinDialog);
 
-      var loginDialog = document.querySelector("#login-dialog");
-      dialogPolyfill.registerDialog(loginDialog);
-
-      //Adds event listener to the login button, opens the login dialog when clicked
-      document.querySelector("#login-btn").addEventListener("click", function() {
-        loginDialog.showModal();
-      });
-
-      //Event listener that invokes the sign in function when a user enters form data and clicks
-      // on login
-      document.querySelector("#sign-in").addEventListener("click", signInWithEmailandPassword);
-
-      //Signouts a user from firebase when clicking on the logout button, returns a feedback 
-      //message if the logout is successfull or unsuccessfull
-      document.querySelector("#logout-btn").addEventListener("click", function() {
-        firebase.auth().signOut().then(function() {
-            console.log('Signed Out');
-        }, function(error) {
-            console.error('Sign Out Error', error);
-        });
-      });
-            
-            //Required by Material Design lite to support dialog boxes on platforms 
-            // that are not Google Chrome
-            createDialog = document.querySelector("#create-account-dialog");
-            dialogPolyfill.registerDialog(createDialog);
-
-        //Opens the registration dialog when create account button is clicked
-        document.querySelector("#create-account").addEventListener("click", function() {
-            createDialog.showModal();
+      // Adds event listener to the login button, opens the login dialog when clicked
+      document
+        .querySelector("#signin-btn")
+        .addEventListener("click", function() {
+          signinDialog.showModal();
         });
 
-        //Submits the form data for registration when a user clicks submit
-        document.querySelector("#entry-submit").addEventListener("click", submitCreateAccount);
-    },
+      document
+        .querySelector("#signin-btn-submit")
+        .addEventListener("click", handleUserSignin);
+
+      // REGISTRAGTION DIALOG
+      var signupDialog = document.querySelector("#signup-dialog");
+      dialogPolyfill.registerDialog(signupDialog);
+
+      // Adds event listener to the login button, opens the login dialog when clicked
+      document
+        .querySelector("#signup-btn")
+        .addEventListener("click", function() {
+          signupDialog.showModal();
+        });
+
+      document
+        .querySelector("#signup-btn-submit")
+        .addEventListener("click", handleUserSignup);
+
+      document
+        .querySelector("#signout-btn-submit")
+        .addEventListener("clicl", handleUserSignout);
+    }
   };
 })();
