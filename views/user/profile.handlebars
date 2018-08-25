@@ -3,7 +3,22 @@
     <div class="col-8 offset-2">
       <div class="card mt-4">
         <div class="card-body">
-          <h1>You're logged in!</h1>
+          <h5 class="card-title">User Profile</h5>
+          <p>
+            <strong>Display Name: </strong>: {{user.displayName}}</p>
+          <p>
+          <p>
+            <strong>Email</strong>: {{user.email}}</p>
+          <p>
+            <strong>Coins Followed: </strong>
+            <p>
+              <ul>
+                {{!-- Place holder for coins followed --}}
+              </ul>
+            </p>
+          </p>
+            <a href="/user/profile/settings">Change your settings</a><br>
+            <a href="/">← Back To Home</a>
         </div>
       </div>
     </div>
