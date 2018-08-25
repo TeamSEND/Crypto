@@ -1,35 +1,34 @@
-<div class="container">
+<div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
   <div class="row">
     <div class="col-8 offset-2">
-      <div class="card mt-4">
-        <div class="card-body">
-          <h5 class="card-title">Current Settings</h5>
-          <p>
-            <strong>Display Name: </strong>: {{user.displayName}}</p>
-          <p>
-          <p>
-            <strong>Email</strong>: {{user.email}}</p>
-          <p>
-            <strong>First Name: </strong> {{user.firstName}} <br>
-            <strong>Last Name: </strong> {{user.lastName}} <br>
-          </p>
-          <h5 class="card-title">Change Settings</h5>
-          <form id="settings" name="settings" method="post" action="/user/settings">
-              <label for="email">Email Address</label>
-              <input class="text" name="email" type="email" />
-              <label for="displayname">Display Name:</label>
-              <input name="displayname" type="text" />
-              <label for="firstname">First Name:</label>
-              <input name="firstname" type="text" />
-              <label for="lastname">Last Name:</label>
-              <input name="lastname" type="text" />
-              <label for="password">Password: </label>
-              <input name="password" type="password" />
-              <input class="btn" type="submit" value="Change Settings" />
-          </form>
-        <p><a href="/">← Back To Home</a></p> 
-        </div>
-      </div>
+      <h5>Current Settings</h5>
+      <p>
+        <strong>Display Name: </strong>: {{user.displayName}}</p>
+      <p>
+      <p>
+        <strong>Email</strong>: {{user.email}}</p>
+      <p>
+        <strong>First Name: </strong> {{user.firstName}} <br>
+        <strong>Last Name: </strong> {{user.lastName}} <br>
+      </p>
+      <h5>Change Settings</h5>
+      <form id="settings" name="settings" method="post" action="/user/settings">
+          <label for="email">Change Email Address</label><br>
+          <input class="text" name="email" type="email" /><br>
+          <label for="cdisplayname">Change Display Name:</label><br>
+          <input name="cdisplayname" type="text" /><br>
+          <label for="cfirstname">Change First Name:</label><br>
+          <input name="cfirstname" type="text" /><br>
+          <label for="clastname">Change Last Name:</label><br>
+          <input name="clastname" type="text" /><br>
+          <label for="cpassword">Change Password: </label><br>
+          <input name="cpassword" type="password" /><br>
+          <h5>Validate your current password:</h5>
+          <label for="password">Password: </label><br>
+          <input name="password" type="password" required /><br><br>
+          <input class="btn" type="submit" value="Change Settings" /><br>
+      </form>
+      <p><a href="/">← Back To Home</a></p> 
     </div>
   </div>
 </div>
