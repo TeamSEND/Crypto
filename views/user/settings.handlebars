@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div class="col-8 offset-2">
+      <div class="card mt-4">
+        <div class="card-body">
+          <h5 class="card-title">Current Settings</h5>
+          <p>
+            <strong>Display Name: </strong>: {{user.displayName}}</p>
+          <p>
+          <p>
+            <strong>Email</strong>: {{user.email}}</p>
+          <p>
+            <strong>First Name: </strong> {{user.firstName}} <br>
+            <strong>Last Name: </strong> {{user.lastName}} <br>
+          </p>
+          <h5 class="card-title">Change Settings</h5>
+          <form id="settings" name="settings" method="post" action="/user/settings">
+              <label for="email">Email Address</label>
+              <input class="text" name="email" type="email" />
+              <label for="displayname">Display Name:</label>
+              <input name="displayname" type="text" />
+              <label for="firstname">First Name:</label>
+              <input name="firstname" type="text" />
+              <label for="lastname">Last Name:</label>
+              <input name="lastname" type="text" />
+              <label for="password">Password: </label>
+              <input name="password" type="password" />
+              <input class="btn" type="submit" value="Change Settings" />
+          </form>
+        <p><a href="/">← Back To Home</a></p> 
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

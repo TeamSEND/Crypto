@@ -3,15 +3,17 @@
     <div class="col-8 offset-2">
       <div class="card mt-4">
         <div class="card-body">
-          <form id="signup" name="signup" method="post" action="/signup">
+          <form id="signup" name="signup" method="post" action="/user/signup">
               <label for="email">Email Address</label>
-              <input class="text" name="email" type="email" />
-              <label for="firstname">Firstname</label>
+              <input class="text" name="email" type="email" required />
+              <label for="displayname">Display Name:</label>
+              <input name="displayname" type="text" required />
+              <label for="firstname">First Name:</label>
               <input name="firstname" type="text" />
-              <label for="lastname">Lastname</label>
+              <label for="lastname">Last Name:</label>
               <input name="lastname" type="text" />
-              <label for="password">Password</label>
-              <input name="password" type="password" />
+              <label for="password">Password: </label>
+              <input name="password" type="password" required />
               <input class="btn" type="submit" value="Sign Up" />
           </form>
         </div>
