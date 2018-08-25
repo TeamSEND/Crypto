@@ -35,7 +35,9 @@ Object.keys(db).forEach(function(modelName) {
     db[modelName].associate(db);
   }
 });
-Coinurl.belongsTo(Coin)
+db.coinurl.belongsTo(db.coin)
+db.coin.belongsToMany(db.user, {through: 'usercoins'});
+db.user.belongsToMany(db.coin, {through: 'usercoins'});
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
