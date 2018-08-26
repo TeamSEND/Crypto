@@ -9,6 +9,7 @@ console.log(topTen)
 module.exports = function (app) {
   // Load index page
 <<<<<<< HEAD
+<<<<<<< HEAD
   app.get("/", function(req, res) {
 <<<<<<< HEAD
     res.render("index", { user: req.user });
@@ -37,6 +38,19 @@ module.exports = function (app) {
   });
 
   // Render 404 page for any unmatched routes
+=======
+  app.get("/", function (req, res) {
+
+    var topTen = news.topArticles("bitcoin");
+    console.log(topTen)
+    res.render("index", {
+      topTen: topTen,
+    })
+
+  });
+
+  // Render 404 page for any unmatched routes
+>>>>>>> b5e522e06c99910adceb4c9f38aad2ec55ed3470
   app.get("*", function (req, res) {
     res.render("404");
 >>>>>>> made changes to modules
