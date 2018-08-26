@@ -5,3 +5,29 @@
   margin-left: 150px; 
   margin-top: 90px; 
 }
+.demo-card-wide.mdl-card {
+  width: 512px;
+}
+.demo-card-wide > .mdl-card__title {
+  color: #fff;
+  height: 176px;
+  background: url('../assets/demos/welcome_card.jpg') center / cover;
+}
+.demo-card-wide > .mdl-card__menu {
+  color: #fff;
+}
+
+#card{
+  margin-left: 400px; 
+  margin-top: 50px; 
+}
+
+#news-card{
+  margin-left: 400px; 
+  margin-top: 50px; 
+}
+
+#update-card{
+  margin-left: 400px; 
+  margin-top: 50px; 
+}
