@@ -1,19 +1,23 @@
 var db = require("../models");
+var keys = require("../config/key");
+var CoinMarketCapAPI = require("../modules/coinmarketcap");
+var CoinNewsAPI = require("../modules/coinnewsapi");
+
+// Initialize API modules
+var cmcAPI = new CoinMarketCapAPI(keys.CMC);
+var cnAPI = new CoinNewsAPI(keys.NEWS);
 
 module.exports = function(app) {
-  // Load index page
+  // Renders front page with top articles
   app.get("/", function(req, res) {
-    res.render("index", { user: req.user });
+    cnAPI.topHeadlines().then(function(articles) {
+      console.log(articles);
+      res.render("index", {
+        user: req.user,
+        articles: articles
+      });
+    });
   });
-
-  // Load example page and pass in an example by id
-  // app.get("/example/:id", function(req, res) {
-  //   db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
-  //     res.render("example", {
-  //       example: dbExample
-  //     });
-  //   });
-  // });
 
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
