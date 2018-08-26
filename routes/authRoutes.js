@@ -3,19 +3,17 @@ var authController = require("../controllers/authcontroller.js");
 module.exports = function(app, passport) {
   app.post(
     "/user/signup",
-    passport.authenticate("local-signup", {
-      successRedirect: "/user/profile",
-      failureRedirect: "/"
-    })
+    passport.authenticate("local-signup"), function(req, res) {
+      res.status(200).send({result: 'redirect', url:'/user/profile'})
+    }
   );
 
-  app.post(
-    "/user/signin",
-    passport.authenticate("local-signin", {
-      successRedirect: "/user/profile",
-      failureRedirect: "/"
-    })
-  );
+  app.post("/user/signin", passport.authenticate("local-signin"), function(
+    req,
+    res
+  ) {
+    res.status(200).send({result: 'redirect', url:'/user/profile'});
+  });
 
   app.get("/user/signout", authController.signout);
 

@@ -9,13 +9,19 @@ var Session = (function() {
           "Content-Type": "application/json"
         },
         type: "POST",
-        url: "user/signin",
-        data: JSON.stringify(data)
+        url: "/user/signin",
+        data: JSON.stringify(data),
+        success: function(response) {
+          console.log(response);
+          if (response.result === "redirect") {
+            window.location.replace(response.url);
+          }
+        }
       });
     },
     signout: function() {
       return $.ajax({
-        url: "user/signout",
+        url: "/user/signout",
         type: "GET"
       });
     },
@@ -24,15 +30,21 @@ var Session = (function() {
         headers: {
           "Content-Type": "application/json"
         },
-        url: "user/signup",
+        url: "/user/signup",
         type: "POST",
-        data: JSON.stringify(data)
+        data: JSON.stringify(data),
+        success: function(response) {
+          console.log(response);
+          if (response.result === "redirect") {
+            window.location.replace(response.url);
+          }
+        }
       });
     }
   };
 
   function handleUserSignup(event) {
-    var data = {
+    var formData = {
       displayName: document.getElementById("form-displayname").value,
       email: document.getElementById("form-email").value,
       firstName: document.getElementById("form-firstname").value,
@@ -40,16 +52,16 @@ var Session = (function() {
       password: document.getElementById("form-password").value
     };
 
-    request.signup(data);
+    request.signup(formData);
   }
 
   function handleUserSignin(event) {
-    var data = {
+    var formData = {
       email: document.getElementById("signin-email").value,
       password: document.getElementById("signin-password").value
     };
 
-    request.signin(data);
+    request.signin(formData);
   }
 
   function handleUserSignout(event) {

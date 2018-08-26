@@ -8,7 +8,6 @@ exports.signout = function(req, res) {
 };
 
 exports.profile = function(req, res) {
-  console.log(req.user);
   var user = req.user;
   res.render("./user/profile", { user: user });
 };
