@@ -1,36 +1,71 @@
-//dependencies
+var axios = require("axios");
 
-const NewsAPI = require("newsapi");
-const keys = require("../config/key");
-//placeholder for search
+var newsAPI = function(APIkey) {
+  this.articles;
+  var key = APIkey;
 
-//generic search for trending articles. Only using crypto-coins-news
-var newsObject = function (APIkey) {
-    this.newsapi = new NewsAPI(APIkey);
-    this.articles = {};
-    this.topArticles = async function (search) {
-        return new Promise((resolve, reject) => {
+  this.topHeadlines = function(keyword) {
+    var config = {
+      q: keyword,
+      apiKey: key
+    };
+    return (
+      axios({
+        method: "get",
+        baseURL: "https://newsapi.org/v2/",
+        url: "/top-headlines?sources=crypto-coins-news",
+        params: config
+      })
+        .then(function(response) {
+          // parses the response as a JSON object
+          var articlesResults = Object.values(
+            JSON.parse(JSON.stringify(response.data))
+          );
+          // sets the coinData variable with the parsed object
+          this.articles = articlesResults;
+          return this.articles;
+        })
+        // console logs an error.
+        .catch(function (error) {
+          console.log(error);
+        })
+    );
+  };
 
-            const error = false;
-          
+  this.everything = function(keyword) {
+    var config = {
+      q: keyword,
+      apiKey: key
+    };
+    return (
+      axios({
+        method: "get",
+        baseURL: "https://newsapi.org/v2/",
+        url: "/everything?sources=crypto-coins-news",
+        params: config
+      })
+        .then(function(response) {
+          // parses the response as a JSON object
+          var articlesResults = Object.values(
+            JSON.parse(JSON.stringify(response.data))
+          );
+          // sets the coinData variable with the parsed object
+          this.articles = articlesResults;
+          return this.articles;
+        })
+        // console logs an error.
+        .catch(function(error) {
+          console.log(error);
+        })
+    );
+  };
+};
 
-            this.newsapi.v2.topHeadlines({
-                sources: "crypto-coins-news",
-                q: search
-            }).then(
-                response => {
-                    this.articles = response;
-                    return this.articles;
-                });  
-                if (!error){
-                resolve()
-            } else {
-                reject("Error: unable to handle request.")
-            }
-        });
-    }
-}
+// Testing & Debugging
+// var secretKey = require("../config/key.js");
 
-// var news = new newsObject(keys.NEWS)
-// var topTen = news.topArticles("Bitcoin");
+// var test = new newsAPI(secretKey.NEWS);
 
+// test.topHeadlines().then(function(articles) {
+//   console.log(articles);
+// });

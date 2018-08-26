@@ -1,24 +1,26 @@
 var db = require("../models");
+var keys = require("../config/key");
+var CoinMarketCapAPI = require("../modules/coinmarketcap");
+var CoinNewsAPI = require("../modules/coinnewsapi");
+
+// Initialize API modules and add to middleware
+var cmcAPI = new CoinMarketCapAPI(keys.CMC);
+var cnAPI = new CoinNewsAPI(keys.NEWS);
 
 module.exports = function(app) {
-  //main index
-  app.get("/api/crypto", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.json(dbExamples);
+  // Renders front page with top articles
+  app.get("/", function(req, res) {
+    cnAPI.topHeadlines().then(function(articles) {
+      console.log(articles);
+      res.render("index", {
+        user: req.user,
+        articles: articles
+      });
     });
   });
 
-  // Create a new example
-  app.post("/api/news", function(req, res) {
-    db.news.findAll(req.body).then(function(dbExample) {
-      res.json(dbExample);
-    });
-  });
-
-  // Delete an example by id
-  app.delete("/api/login/:id", function(req, res) {
-    db.Example.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.json(dbExample);
-    });
+  // Render 404 page for any unmatched routes
+  app.get("*", function(req, res) {
+    res.render("404", { user: req.user });
   });
 };
