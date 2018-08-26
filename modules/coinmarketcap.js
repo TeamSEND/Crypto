@@ -23,7 +23,7 @@ module.exports = function(APIkey) {
             JSON.parse(JSON.stringify(response.data))
           );
           // sets the coinData variable with the parsed object
-          this.coinData = coinJSON;
+          this.coinData = coinJSON[1];
           return this.coinData;
         })
         // console logs an error.
