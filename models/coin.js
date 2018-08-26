@@ -36,7 +36,7 @@ module.exports = function(sequelize, DataTypes) {
       tags: {
         type: DataTypes.STRING
     },
-}),
+});
     return Coin;
   };
   
