@@ -18,10 +18,10 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/search", function(req, res) {
-    cmcAPI.bestCryptos().then(function(cryptocoins) {
+  app.get("/marketrankings", function(req, res) {
+    cmcAPI.listCryptos().then(function(cryptocoins) {
       console.log(cryptocoins);
-      res.render("search", {
+      res.render("marketrankings", {
         user: req.user,
         cryptocoins: cryptocoins
       });
@@ -29,7 +29,6 @@ module.exports = function(app) {
   });
 
   app.post("/search", function(req, res) {
-    console.log("got it!");
     var keyword = req.body.keyword;
     res
       .status(200)
@@ -37,9 +36,17 @@ module.exports = function(app) {
   });
 
   app.get("/search/results=:keyword", function(req, res) {
-    res.render("searchresults", {
-      user: req.user,
-      keyword: req.params.keyword
+    var coinTicker = req.params.keyword;
+    cmcAPI.cryptoCoin(coinTicker).then(function(coinData) {
+      var marketCoin = coinData[0];
+      var metaCoin = coinData[1];
+      console.log(marketCoin[Object.keys(marketCoin)[0]]);
+      console.log(metaCoin[Object.keys(metaCoin)[0]]);
+      res.render("searchresults", {
+        user: req.user,
+        marketCoin: marketCoin[Object.keys(marketCoin)[0]],
+        metaCoin: metaCoin[Object.keys(metaCoin)[0]]
+      });
     });
   });
 

@@ -1,6 +1,122 @@
-<div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
- <p>this is a page for</p>
- <p>{{keyword}}</p>
+<div class="mdl-cell--12-col mdl-grid">
+  <div class="mdl-cell mdl-cell--2-col mdl-grid">
+      <div class="mdl-cell mdl-cell--12-col mdl-grid--no-spacing">
+        <center><a href="{{metaCoin.urls.website}}"><img src="{{metaCoin.logo}}" width="100"></a>
+        <h3>{{metaCoin.name}}</h3>
+        <a class="mdl-button mdl-js-button mdl-button--primary" href="{{metaCoin.urls.website}}">Website</a>
+        <button 
+            class="follow mdl-button mdl-js-button mdl-button--accent" 
+            data-value="{{metaCoin.symbol}}">Follow</button>
+        </center>
+      </div>
+  </div>
+  <div class="mdl-cell mdl-cell--10-col mdl-grid">
+    <div class="mdl-cell mdl-cell-12-col mdl-grid">
+        <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+            <thead>
+                <tr>
+                <th style="text-align: left;">CMC Rank</th>
+                <th style="text-align: left;" class="mdl-data-table__cell--non-numeric">Symbol</th>
+                <th style="text-align: left;">Circulating Supply</th>
+                <th style="text-align: left;">Total Supply</th>
+                <th style="text-align: left;">Max Supply</th>
+                <th style="text-align: left;">List Date</th>
+                <th style="text-align: left;">Market Pairs</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <td style="text-align: center;">{{marketCoin.cmc_rank}}</td>
+                <td class="mdl-data-table__cell--non-numeric">{{marketCoin.symbol}}</td>
+                <td >{{marketCoin.circulating_supply}}</td>
+                <td>{{marketCoin.total_supply}}</td>
+                {{#if marketCoin.max_supply}}
+                <td>{{marketCoin.max_supply}}</td>
+                {{else}}
+                <td>No max supply</td>
+                {{/if}}
+                <td>{{marketCoin.date_added}}</td>
+                <td style="text-align: left;">{{marketCoin.num_market_pairs}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <p> </p>
+        <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+            <thead>
+                <tr>
+                <th style="text-align: left;">USD Price</th>
+                <th style="text-align: left;">USD Volume 24 hours</th>
+                <th style="text-align: left;">USD % 1 hour Change</th>
+                <th style="text-align: left;">USD % 24 Hour Change</th>
+                <th style="text-align: left;">USD % 7 Day Change</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <td>{{marketCoin.quote.USD.price}}</td>
+                <td>{{marketCoin.quote.USD.volume_24h}}</td>
+                <td>{{marketCoin.quote.USD.percent_change_1h}}</td>
+                <td>{{marketCoin.quote.USD.percent_change_24h}}</td>
+                <td>{{marketCoin.quote.USD.percent_change_7d}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="mdl-cell mdl-cell--12-col mdl-grid">
+        {{#each metaCoin.tags}}
+        <span class="mdl-chip">
+            <span class="mdl-chip__text">{{this}}</span>
+        </span>
+        {{/each}}
+    </div>
+    <div class="mdl-cell mdl-cell--12-col mdl-grid">
+        <ul class="demo-list-icon mdl-list">
+            {{#if metaCoin.urls.reddit}}
+            <li class="mdl-list__item">
+                <span class="mdl-list__item-primary-content">
+                <i class="mdl-list__item-icon fab fa-reddit-alien "></i>
+                <span>Reddit</span>
+                </span>
+                <a class="mdl-list__item-secondary-action" href="{{metaCoin.urls.reddit}}"><i class="material-icons">link</i></a>
+            </li>
+            {{/if}}
+            {{#if metaCoin.urls.twitter}}
+            <li class="mdl-list__item">
+                <span class="mdl-list__item-primary-content">
+                <i class="mdl-list__item-icon fab fa-twitter "></i>
+                <span>Twitter</span>
+                </span>
+                <a class="mdl-list__item-secondary-action" href="{{metaCoin.urls.twitter}}"><i class="material-icons">link</i></a>
+            </li>
+            {{/if}}
+            {{#if metaCoin.urls.message_board}}
+            <li class="mdl-list__item">
+                <span class="mdl-list__item-primary-content">
+                <i class="mdl-list__item-icon fas fa-comments "></i>
+                <span>Message Board</span>
+                </span>
+                <a class="mdl-list__item-secondary-action" href="{{metaCoin.urls.message_board}}"><i class="material-icons">link</i></a>
+            </li>
+            {{/if}}
+            {{#if metaCoin.urls.chat}}
+            <li class="mdl-list__item">
+                <span class="mdl-list__item-primary-content">
+                <i class="mdl-list__item-icon fas fa-comment-alt"></i>
+                <span>Chatroom</span>
+                </span>
+                <a class="mdl-list__item-secondary-action" href="{{metaCoin.urls.chat}}"><i class="material-icons">link</i></a>
+            </li>
+            {{/if}}
+            {{#if metaCoin.urls.source_code}}
+            <li class="mdl-list__item">
+                <span class="mdl-list__item-primary-content">
+                <i class="mdl-list__item-icon fas fa-code"></i>
+                <span>Source code</span>
+                </span>
+                <a class="mdl-list__item-secondary-action" href="{{metaCoin.urls.source_code}}"><i class="material-icons">link</i></a>
+            </li>
+            {{/if}}
+        </ul>
+    </div>
+  </div>
 </div>
-
-
