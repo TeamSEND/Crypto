@@ -43,7 +43,7 @@ module.exports = function(app) {
     });
   });
   app.get("/basics101", function(req, res) {
-    res.render("basics101", { user: req.user });
+    res.render("charts", { user: req.user });
   });
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
