@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+    <meta name="description" content="Crypto currency digest for all coins and news.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <title>{{#if title}}{de}Crypted - {{title}}{{else}}{de}Crypted{{/if}}</title>
     <link rel="shortcut icon" href="images/favicon.png">
@@ -15,8 +15,8 @@
 </head>
 
 <body>
- <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
-    <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
+ <div class="decrypted-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+    <header class="decrypted-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
       <div class="mdl-layout__header-row">
         <span class="mdl-layout-title">{de}Crypted</span>
         <div class="mdl-layout-spacer"></div>
@@ -39,11 +39,11 @@
         </ul>
       </div>
     </header>
-    <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
-      <header class="demo-drawer-header">
+    <div class="decrypted-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
+      <header class="decrypted-drawer-header">
         {{#if user}}
-        <a href="/profile"><img src="/images/user.jpg" class="demo-avatar"></a>
-        <div class="demo-avatar-dropdown">
+        <a href="/profile"><img src="/images/user.jpg" class="decrypted-avatar"></a>
+        <div class="decrypted-avatar-dropdown">
           <span>Welcome, {{user.displayName}}</span>
           <div class="mdl-layout-spacer"></div>
           <button id="accbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
@@ -56,7 +56,7 @@
           </ul>
         </div>
         {{else}}
-        <img src="/images/user.jpg" class="demo-avatar">
+        <img src="/images/user.jpg" class="decrypted-avatar">
           <div class="mdl-layout-spacer"></div>
           <button id="signin-btn" 
             class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
@@ -64,14 +64,14 @@
           </button>
         {{/if}}
       </header>
-      <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
+      <nav class="decrypted-navigation mdl-navigation mdl-color--blue-grey-800">
         <a class="mdl-navigation__link" href="/"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>Home</a>
         <a class="mdl-navigation__link" href="/news"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">inbox</i>Crypto Coin News</a>
         <a class="mdl-navigation__link" href="/marketrankings"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">delete</i>Coin Market Rank</a>
       </nav>
     </div>
     <main class="mdl-layout__content mdl-color--grey-100">
-      <div class="mdl-grid demo-content">
+      <div class="mdl-grid decrypted-content">
       {{{body}}}
       </div>
     </main>
