@@ -42,9 +42,14 @@ module.exports = function(app) {
       keyword: req.params.keyword
     });
   });
-
+  app.get("/basics101", function(req, res) {
+    res.render("basics101", { user: req.user });
+  });
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
     res.render("404", { user: req.user });
   });
+
+
 };
+

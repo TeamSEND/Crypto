@@ -214,3 +214,35 @@
             align-items: center;
   }
   
+  
+.questionHeader  {
+
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  border-bottom: solid;
+  margin: .5em;
+  padding: 1.3rem;
+  background-color: #fff;
+  border-bottom-width: 2ex;
+  border-bottom-color: #063244;
+  font-size: 24px;
+  z-index: 3;
+    }
+    
+
+    .contentDiv{
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      border-bottom: solid;
+      margin: 2rem;
+      padding: 1.3rem;
+      background-color: #fff;
+      border-bottom-width: 2ex;
+      border-bottom-color: #063244;
+      font-size: 20px;
+      z-index: 3;
+      float: right;
+    }
+
+    
+    .contentRow{
+      margin-top:1%;
+      }
