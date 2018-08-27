@@ -1,0 +1,35 @@
+<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+  <thead>
+    <tr>
+      <th style="text-align: left;">CMC Rank</th>
+      <th style="text-align: left;">Name</th>
+      <th style="text-align: left;">Symbol</th>
+      <th style="text-align: left;">USD Price</th>
+      <th style="text-align: left;">% Change 1h</th>
+      <th style="text-align: left;">% Change 24h</th>
+      <th style="text-align: left;">% Change 7d</th>
+      <th style="text-align: left;"></th>
+      <th style="text-align: left;"></th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each cryptocoins}}
+    <tr>
+      <td class="mdl-data-table__cell--non-numeric">{{this.cmc_rank}}</td>
+      <td class="mdl-data-table__cell--non-numeric">{{this.name}}</td>
+      <td class="mdl-data-table__cell--non-numeric">{{this.symbol}}</td>
+      <td>{{this.quote.USD.price}}</td>
+      <td>{{this.quote.USD.percent_change_1h}}</td>
+      <td>{{this.quote.USD.percent_change_24h}}</td>
+      <td>{{this.quote.USD.percent_change_7d}}</td>
+      <td class="mdl-data-table__cell--non-numeric"><a href="/search/results={{this.symbol}}"
+            class="view-more mdl-button mdl-js-button mdl-button--primary"
+            data-value="{{this.symbol}}">View More</a></td>
+      <td class="mdl-data-table__cell--non-numeric"><button
+            class="follow mdl-button mdl-js-button mdl-button--primary" 
+            data-value="{{this.symbol}}">Follow</button></td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+

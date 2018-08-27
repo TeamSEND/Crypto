@@ -213,4 +213,7 @@
         -ms-flex-align: center;
             align-items: center;
   }
-  
+
+.demo-list-three {
+  width: 650px;
+}
