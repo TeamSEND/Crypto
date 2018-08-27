@@ -15,20 +15,32 @@
     <link rel="stylesheet" href="/styles/main.css">
 </head>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+<script src="js.particles.js"></script>
+  <title>{de}Crypt</title>
+
+</head>
 <body>
- <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
-    <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
-      <div class="mdl-layout__header-row">
-        <span class="mdl-layout-title">{de}Crypted</span>
-        <div class="mdl-layout-spacer"></div>
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
-          <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
-            <i class="material-icons">search</i>
-          </label>
-          <div class="mdl-textfield__expandable-holder">
-            <input class="mdl-textfield__input" type="text" id="search">
-            <label class="mdl-textfield__label" for="search">Enter your query...</label>
+
+ <ul id="slide-out" class="side-nav fixed">
+    <li>
+     
+      <div class="user-view">
+          
+          <div class="mb-2" id="title">
+            {de}Crypted
           </div>
+          
+          <div class="row">
+              <figure>
+                  <a href="#!user"><i class="fas fa-user-secret fa-3x"></i></a>
+              </figure>
+              <figcaption>
+                    <a href="#!name"><span class="white-text name">John Doe</span></a>
+                    <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
+              </figcaption>
+          </div>
+
         </div>
         <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrbtn">
           <i class="material-icons">more_vert</i>

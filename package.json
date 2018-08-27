@@ -19,8 +19,13 @@
     "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
     "express-session": "^1.15.6",
+    "materialize-css": "^0.100.2",
     "mysql2": "^1.5.3",
     "newsapi": "^2.3.0",
+<<<<<<< HEAD
+=======
+    "nodemon": "^1.18.3",
+>>>>>>> 93eb8d10e977328f0f7552bda7f45f0d9863fb0c
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "sequelize": "^4.38.0",

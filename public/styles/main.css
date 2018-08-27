@@ -1,18 +1,14 @@
-/**
- * Copyright 2015 Google Inc. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+@import url('https://fonts.googleapis.com/css?family=Exo+2|Metamorphous|Permanent+Marker');
+/* Main Layout */
+nav , ul{
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#3f4c6b+31,071b3d+91 */
+background: #3f4c6b; /* Old browsers */
+background: -moz-linear-gradient(left, #3f4c6b 31%, #071b3d 91%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left, #3f4c6b 31%,#071b3d 91%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right, #3f4c6b 31%,#071b3d 91%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f4c6b', endColorstr='#071b3d',GradientType=1 ); /* IE6-9 */
+color:#bdbdbd ;
+}
 
  html, body {
     font-family: 'Roboto', 'Helvetica', sans-serif;
@@ -246,3 +242,52 @@
     .contentRow{
       margin-top:1%;
       }
+#title {
+    position: absoulte !important;
+    text-align: end;
+    }
+
+.waves-light{
+    padding-right: 40px;
+    display: inline;
+    background-color:#ff5722!important;
+       
+}
+
+ a, i {
+    color:#f9a825 !important;
+}
+
+body {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#3f4c6b+11,00467f+58 */
+background: #3f4c6b; /* Old browsers */
+background: -moz-linear-gradient(left, #3f4c6b 11%, #00467f 58%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left, #3f4c6b 11%,#00467f 58%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right, #3f4c6b 11%,#00467f 58%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f4c6b', endColorstr='#00467f',GradientType=1 ); /* IE6-9 */
+}
+
+.coinInfo{
+    margin-top: 2%;
+    margin-left: 26%;
+}
+
+.indexRow{
+    margin-top: 2%;
+    margin-left: 26%;
+}
+.indexImage {
+    background-image: url("images/background.jpg"); /* The image used */
+    background-color: #cccccc; /* Used if the image is unavailable */
+    height: 500px; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+header {
+    margin-left: 30%;
+}
+header button {
+margin : 3% 4%;
+}
