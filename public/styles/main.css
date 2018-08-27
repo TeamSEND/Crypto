@@ -214,3 +214,82 @@
             align-items: center;
   }
   
+
+
+  .questionHeader  {
+
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border-bottom: solid;
+    margin: .5em;
+    padding: 1.3rem;
+    background-color: #fff;
+    border-bottom-width: 2ex;
+    border-bottom-color: #063244;
+    font-size: 24px;
+    z-index: 3;
+      }
+      
+  
+      .contentDiv{
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        border-bottom: solid;
+        margin: 2rem;
+        padding: 1.3rem;
+        background-color: #fff;
+        border-bottom-width: 2ex;
+        border-bottom-color: #063244;
+        font-size: 20px;
+        z-index: 3;
+        float: right;
+      }
+  
+      
+      .contentRow{
+        margin-top:1%;
+        }
+        #bar-chart{
+          background-color: #063244
+        }
+
+        .chartDiv{
+          border-bottom: solid;
+          margin: 2rem;
+          padding: 1.3rem;
+          background-color: rgb(241, 243, 243);
+          border-bottom-width: 2ex;
+          border-bottom-color: #063244;
+          font-size: 20px;
+          z-index: 3;
+          float: right;
+               
+        }
+
+        canvas {
+          color:lightgrey;
+        }
+ #radar{    
+  border: #063244; 
+  border: solid;
+    
+          border-width: 20px;
+     
+
+        }
+
+        #titleBasics{
+          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+          font-size: 40px;
+          text-align: center;
+          color: aliceblue; 
+          background-color: #063244;
+        
+        }
+
+        #titleBasics2{
+          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif !important;
+          font-size: 40px !important;
+          text-align: center !important;
+          color: aliceblue !important; 
+          background-color: #063244 !important;
+        
+        }
