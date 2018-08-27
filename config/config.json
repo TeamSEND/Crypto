@@ -5,10 +5,6 @@
     "database": "crypto_db",
     "host": "localhost",
     "dialect": "mysql"
-<<<<<<< HEAD
-=======
-
->>>>>>> 93eb8d10e977328f0f7552bda7f45f0d9863fb0c
   },
   "test": {
     "username": "root",
